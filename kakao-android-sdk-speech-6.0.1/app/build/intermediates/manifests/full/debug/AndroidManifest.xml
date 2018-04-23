@@ -23,6 +23,7 @@
     <!-- </activity> -->
     <application
         android:allowBackup="true"
+        android:debuggable="true"
         android:icon="@drawable/newtone_icon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
