@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\ghktj\\Documents\\GitHub\\Team-Practice\\kakao-android-sdk-speech-6.0.1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ghktj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.0.0.aar\\7d623bda721912359493ca4a24c57390\\res\\values-sw600dp\\values-sw600dp.xml",
+                    "source": "C:\\Users\\ghktj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.0.0.aar\\448f4b9a1871da892a905f4d42014730\\res\\values-sw600dp\\values-sw600dp.xml",
                     "from": {
                         "startLines": "4,5,6,7,10,13,14,15",
                         "startColumns": "4,4,4,4,4,4,4,4",

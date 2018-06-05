@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\ghktj\\Documents\\GitHub\\Team-Practice\\kakao-android-sdk-speech-6.0.1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-kk-rKZ\\values-kk-rKZ.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ghktj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.0.0.aar\\7d623bda721912359493ca4a24c57390\\res\\values-kk-rKZ\\values-kk-rKZ.xml",
+                    "source": "C:\\Users\\ghktj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.0.0.aar\\448f4b9a1871da892a905f4d42014730\\res\\values-kk-rKZ\\values-kk-rKZ.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
