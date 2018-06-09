@@ -12,6 +12,7 @@
         android:orientation="vertical">
 
         <!-- Title Bar Start -->
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -77,9 +78,35 @@
                     android:id="@+id/view_pager"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingHorizontal="70dp" />
+                    android:paddingHorizontal="70dp" >
+
+                </android.support.v4.view.ViewPager>
 
             </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="106dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="20dp"
+                    android:text="일일 박스오피스"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="200dp"
+                    android:layout_height="25dp"
+                    android:layout_centerInParent="true"
+                    android:text="TextView"
+                    android:textColor="@android:color/white" />
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -91,14 +118,15 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/round_button"
                     android:text="바로예매"
-                    android:textSize="25dp"
-                    android:textStyle="bold"
                     android:textColor="@android:color/white"
-                    android:background="@drawable/round_button"/>
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </LinearLayout>
+
         <!-- Content End -->
     </LinearLayout>
 
@@ -202,6 +230,7 @@
                 </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
+
     </LinearLayout>
     <!-- Dropdown Section End -->
 </FrameLayout>
