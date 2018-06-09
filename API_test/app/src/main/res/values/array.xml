@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 각 영화 포스터 -->
+    <string-array name="movie_poster_arr">
+        <item>poster_deadpool_2</item>
+        <item>poster_avengers_infinity_war</item>
+        <item>poster_wrestler</item>
+        <item>poster_champion</item>
+    </string-array>
+
+    <!-- 각 영화 연령 제한 -->
+    <string-array name="movie_age_arr">
+        <item>age_19</item>
+        <item>age_12</item>
+        <item>age_15</item>
+        <item>age_12</item>
+    </string-array>
+
+    <!-- 각 영화 타이틀 -->
+    <string-array name="movie_title_arr">
+        <item>데드풀2</item>
+        <item>어벤져스: 인피니티 워</item>
+        <item>레슬러</item>
+        <item>챔피언</item>
+    </string-array>
+
+    <!-- 각 영화 예매율 -->
+    <string-array name="movie_rate_arr">
+        <item>71.34%</item>
+        <item>12.91%</item>
+        <item>1.91%</item>
+        <item>0.63%</item>
+    </string-array>
+
+    <!-- 각 영화 평점 -->
+    <string-array name="movie_grade_arr">
+        <item>9.13</item>
+        <item>8.97</item>
+        <item>4.97</item>
+        <item>6.59</item>
+    </string-array>
+</resources>
