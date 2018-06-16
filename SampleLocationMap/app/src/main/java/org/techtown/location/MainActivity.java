@@ -8,17 +8,20 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements GoogleMap.OnMarkerClickListener{
     private static final String TAG = "MainActivity";
 
     SupportMapFragment mapFragment;
@@ -34,24 +37,28 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onMapReady(GoogleMap googleMap) {
-                // 구글 맵 객체를 불러온다.
-                map = googleMap;
+                    // 구글 맵 객체를 불러온다.
+                    map = googleMap;
 
-                // 서울에 대한 위치 설정
-                LatLng seoul = new LatLng(37.52487, 126.92723);
+                    // 서울에 대한 위치 설정
+                    LatLng seoul = new LatLng(37.52487, 126.92723);
 
-                // 구글 맵에 표시할 마커에 대한 옵션 설정
-                MarkerOptions makerOptions = new MarkerOptions();
-                makerOptions
-                        .position(seoul)
-                        .title("원하는 위치(위도, 경도)에 마커를 표시했습니다.");
+                    for (int idx = 0; idx < 10; idx++) {
+                        // 구글 맵에 표시할 마커에 대한 옵션 설정
+                        MarkerOptions makerOptions = new MarkerOptions();
+                        makerOptions
+                                .position(new LatLng(37.52487 + idx, 126.92723))
+                                .title("마커" + idx); // 타이틀.
 
-                // 마커를 생성한다.
-                map.addMarker(makerOptions);
+                        // 마커를 생성한다. //마커를 나타냄
+                        map.addMarker(makerOptions);
+                    }
 
-                //카메라를 서울 위치로 옮긴다.
-                map.moveCamera(CameraUpdateFactory.newLatLng(seoul));
-            }
+                        map.setOnMarkerClickListener(MainActivity.this);
+                        //카메라를 서울 위치로 옮긴다.
+                        map.moveCamera(CameraUpdateFactory.newLatLng(seoul));
+                    }
+                        //
         });
 
         try {
@@ -148,4 +155,9 @@ public class MainActivity extends AppCompatActivity {
         map.animateCamera(CameraUpdateFactory.newLatLngZoom(curPoint, 15));
     }
 
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        Toast.makeText(this,marker.getTitle() + "\n" + marker.getPosition(), Toast.LENGTH_SHORT).show();
+        return false;
+    }
 }
