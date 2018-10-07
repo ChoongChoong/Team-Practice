@@ -2,12 +2,14 @@ package com.prac.ryeol.pracysr;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
@@ -20,6 +22,8 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 
 public class MainActivity extends FragmentActivity {
+    private String TAG = "MainActivity";
+
     /* ViewPager */
     ViewPager vp;
     private int currentPosition = 0;
@@ -36,6 +40,10 @@ public class MainActivity extends FragmentActivity {
 
     /* Animation */
     Animation mDropdown;
+    Animation mRiseup;
+
+    /* Movie Detail */
+    MovieDetail detail;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -70,16 +78,19 @@ public class MainActivity extends FragmentActivity {
         dropdownBody = (LinearLayout) findViewById(R.id.ll_dropdown_body);
         dropdownList = (LinearLayout) findViewById(R.id.ll_dropdown_list);
         dropdownItem = (LinearLayout) findViewById(R.id.ll_dropdown_item);
+
         // Dropdown animation
         mDropdown = AnimationUtils.loadAnimation(this, R.anim.dropdown);
+        mRiseup   = AnimationUtils.loadAnimation(this, R.anim.riseup);
 
-        currentMenu = (TextView) findViewById(R.id.tv_current_menu);
+        currentMenu  = (TextView) findViewById(R.id.tv_current_menu);
         selectedMenu = (TextView) findViewById(R.id.tv_selected_menu);
-        showingNow = (TextView) findViewById(R.id.tv_showing_now);
-        toBeShown = (TextView) findViewById(R.id.tv_to_be_shown);
+        showingNow   = (TextView) findViewById(R.id.tv_showing_now);
+        toBeShown    = (TextView) findViewById(R.id.tv_to_be_shown);
 
         dropdownBody.setClickable(true);
 
+        /* Movie Detail */
     }
 
     /** ViewPager **/
@@ -133,6 +144,21 @@ public class MainActivity extends FragmentActivity {
 
     /* Dropdown Close */
     public void dropdownClose(View v) {
-        dropdownBody.setVisibility(View.INVISIBLE);
+        dropdownItem.startAnimation(mRiseup);
+
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                dropdownBody.setVisibility(View.INVISIBLE);
+            }
+        }, 200);
+    }
+
+    /** Movie Detail **/
+    public void detailDialog() {
+        FragmentManager fm = getSupportFragmentManager();
+
+        detail.newInstance(currentPosition).show(fm, TAG);
     }
 }

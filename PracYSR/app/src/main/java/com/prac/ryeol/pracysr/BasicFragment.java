@@ -12,15 +12,15 @@ import android.widget.TextView;
 
 public class BasicFragment extends Fragment {
     private final static String PARAMS_POSTER   = "params_poster",
-            PARAMS_TITLE    = "params_title",
-            PARAMS_AGE      = "params_age",
-            PARAMS_RATE     = "params_rate",
-            PARAMS_GRADE    = "params_grade";
+                                PARAMS_TITLE    = "params_title",
+                                PARAMS_AGE      = "params_age",
+                                PARAMS_RATE     = "params_rate",
+                                PARAMS_GRADE    = "params_grade";
     private String  poster  = "",
-            title   = "",
-            age     = "",
-            rate    = "",
-            grade   = "";
+                    title   = "",
+                    age     = "",
+                    rate    = "",
+                    grade   = "";
 
     private int currentPage = 0;
 
@@ -81,6 +81,8 @@ public class BasicFragment extends Fragment {
         iv_poster.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 currentPage = ((MainActivity)getActivity()).getCurrentPosition();
+
+                ((MainActivity)getActivity()).detailDialog();
 
                 Log.i(title, "Current Item: " + currentPage);
             }

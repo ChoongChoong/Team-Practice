@@ -39,4 +39,12 @@
         <item>4.97</item>
         <item>6.59</item>
     </string-array>
+
+    <!-- 각 영화 트레일러 -->
+    <string-array name="movie_trailer_arr">
+        <item>fgPSWDwUsIk</item>
+        <item>xUDhdCsLkjU</item>
+        <item>66wtk4SAnwU</item>
+        <item>YgN4RghTCgA</item>
+    </string-array>
 </resources>
